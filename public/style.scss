@@ -8,10 +8,16 @@
 :root {
     --snake-length: 1;
     --snake-speed: 1s;
+    --len: 1vw;
+    @media all and (orientation: landscape){
+        --len: 1vh;
+    }
 }
 
 body {
-
+    @media all and (orientation: portrait){
+        
+    }
 }
 
 .playground {
@@ -34,13 +40,39 @@ body {
             height: 5%;
             display: inline-block;
             position: relative;
+            color: white;
         }
-        .tail {
-            //background: red;
+        .tail:before{
+            content: "";
+            height: 100%;
+            width: 100%;
+            display: inline-block;
+            overflow: hidden;
+            left: 0;
+            top: 0;
+            position: absolute;
+            border: 0.1px solid;
             transition: all calc(var(--snake-length) * var(--snake-speed));
         }
-        .snake {
+        .tail.horizontal:before{
+            height: 80%;
+            top:10%;
+        }
+        .tail.vertical:before{
+            width: 80%;
+            left: 10%;
+        }
+        .snake:before{
+            border: 1px solid;
+            content: "";
+            height: 100%;
+            width: 100%;
+            display: inline-block;
+            overflow: hidden;
+            left: 0;
+            top: 0;
             background: white;
+            position: absolute;
         }
         .food:before {
             content: "";
