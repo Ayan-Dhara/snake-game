@@ -8,25 +8,22 @@
 :root {
     --snake-length: 1;
     --snake-speed: 1s;
-    --len: 1vw;
-    @media all and (orientation: landscape){
-        --len: 1vh;
-    }
 }
 
 body {
-    @media all and (orientation: portrait){
-        
-    }
+    background: #2c3939;
 }
 
 .playground {
-    height: 100vw;
+    height: 100vmin;
+    width: 100vmin;
     background: dodgerblue;
     position: relative;
+    margin-top: max(0px, calc(50vh - 50vw));
+    margin-left: max(0px, calc(50vw - 50vh));
     .ground {
         position: absolute;
-        inset: 1vw;
+        inset: 1vmin;
         //left: 1vw;
         //top: 1vw;
         //right: 1vw;

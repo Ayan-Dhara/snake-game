@@ -7,22 +7,23 @@
 :root {
   --snake-length: 1;
   --snake-speed: 1s;
-  --len: 1vw;
 }
-@media all and (orientation: landscape) {
-  :root {
-    --len: 1vh;
-  }
+
+body {
+  background: #2c3939;
 }
 
 .playground {
-  height: 100vw;
+  height: 100vmin;
+  width: 100vmin;
   background: dodgerblue;
   position: relative;
+  margin-top: max(0px, 50vh - 50vw);
+  margin-left: max(0px, 50vw - 50vh);
 }
 .playground .ground {
   position: absolute;
-  inset: 1vw;
+  inset: 1vmin;
   background: green;
   display: flex;
   flex-wrap: wrap;
